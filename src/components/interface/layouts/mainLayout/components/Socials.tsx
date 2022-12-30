@@ -13,7 +13,7 @@ const Socials = () => {
       onMouseLeave={mouseLeaveHandler}
       className="hidden xl:flex ml-24"
     >
-      <ul className="flex gap-x-4">
+      <ul className="flex gap-x-4 text-[#28C278]">
         <li>
           <a
             href="https://www.linkedin.com/in/cadelu/"

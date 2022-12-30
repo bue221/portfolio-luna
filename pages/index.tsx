@@ -1,8 +1,6 @@
 import Head from "next/head";
 // import link
 import Link from "next/link";
-// import images
-import WomanImg from "../img/home/woman.png";
 // import motion
 import { motion } from "framer-motion";
 // import transition
@@ -39,23 +37,25 @@ export default function Home() {
               className="w-full pt-36 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start"
             >
               <h1 className="h1 text-[#28C278]">
-                UX / UI designer
-                <br /> & 3D designer
+                UX / UI
+                <br /> designer
               </h1>
               <p className="text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12">
                 Bogotá DC, Colombia
               </p>
-              <Link href="/contact" className="btn mb-[30px]">
-                hire me
-              </Link>
-              <a
-                href="/resources/Hoja_de_vida.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn mb-[30px]"
-              >
-                See the CV
-              </a>
+              <div className="flex flex-row gap-4">
+                <Link href="/contact" className="btn mb-[30px]">
+                  hire me
+                </Link>
+                <a
+                  href="/resources/Hoja_de_vida.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn mb-[30px]"
+                >
+                  See the CV
+                </a>
+              </div>
             </motion.div>
             {/* image */}
             <div className="flex justify-end max-h-96 lg:max-h-max">
@@ -70,7 +70,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1 }}
                   transition={transitionInitial}
                   src="/img/home/woman.jpeg"
-                  className="max-h-[100vh] w-full lg:w-[50vh] object-cover lg:h-[100vh]"
+                  className="max-h-[100vh] w-full lg:w-[50vw] object-cover lg:h-[100vh]"
                   alt=""
                 />
               </motion.div>

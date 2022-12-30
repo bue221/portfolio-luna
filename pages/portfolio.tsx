@@ -9,6 +9,34 @@ import { transitionInitial } from "../src/components/animations/transitions";
 import { useContext } from "react";
 import { CursorContext } from "context/cursorContext";
 
+const projects = [
+  {
+    link: "https://www.behance.net/gallery/157597159/Rave-Proyect-UXUI-Design-and-Writing",
+    name: "Rave Proyect - UX/UI Design and Writing",
+    img: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/d9b02c157597159.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",
+  },
+  {
+    link: "https://www.behance.net/gallery/157016129/Booking-Caso-de-estudio-ux-research",
+    name: "Booking - Caso de estudio ux research",
+    img: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/91111b157016129.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",
+  },
+  {
+    link: "https://www.behance.net/gallery/147405159/Challenge-Spot2",
+    name: "Challenge Spot2",
+    img: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/609e0a147405159.Y3JvcCw5ODEsNzY4LDIxLDA.png",
+  },
+  {
+    link: "https://www.behance.net/gallery/143787873/Rediseno-Bookii",
+    name: "Rediseno Bookii",
+    img: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/c1a196143787873.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",
+  },
+  {
+    link: "https://www.behance.net/gallery/137144771/Feel-Fit-App",
+    name: "Feel Fit App",
+    img: "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/6da0df137144771.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",
+  },
+];
+
 const PortfolioPage = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
 
@@ -41,53 +69,29 @@ const PortfolioPage = () => {
             >
               <h1 className="h1">Portfolio</h1>
               <p className="mb-12 max-w-sm">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                <b> Exercitationem, veritatis.</b> Veritatis illum aut,
-                reprehenderit sed dolorem dolore.
-                <br />
-                <br />
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae, iure! Ullam, dolore? Eligendi, quam mollitia.
+                These are some of the personal projects and tests that I have
+                developed during my training time.
               </p>
               <Link href={"/contact"} className="btn mb-[30px] mx-auto lg:mx-0">
                 Hire me
               </Link>
             </motion.div>
-            {/* image grid */}
             <div
               onMouseEnter={mouseEnterHandler}
               onMouseLeave={mouseLeaveHandler}
-              className="grid grid-cols-2 lg:gap-2"
+              className="grid grid-cols-2 lg:gap-2 max-h-[40vh] lg:max-h-[80vh] overflow-y-auto"
             >
-              {/* image */}
-              <div className="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
-                <img
-                  className="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
-                  src="/img/portfolio/1.png"
-                  alt=""
-                />
-              </div>
-              <div className="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
-                <img
-                  className="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
-                  src="/img/portfolio/2.png"
-                  alt=""
-                />
-              </div>
-              <div className="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
-                <img
-                  className="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
-                  src="/img/portfolio/3.png"
-                  alt=""
-                />
-              </div>
-              <div className="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
-                <img
-                  className="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
-                  src="/img/portfolio/4.png"
-                  alt=""
-                />
-              </div>
+              {projects.map((project) => (
+                <a key={project.name} href={project.link}>
+                  <div className="max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden">
+                    <img
+                      className="object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500"
+                      src={project.img}
+                      alt={project.name}
+                    />
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>

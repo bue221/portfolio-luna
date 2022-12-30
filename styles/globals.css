@@ -13,6 +13,6 @@
     @apply h-full w-screen lg:h-screen;
   }
   .btn {
-    @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-[#28C278] text-white;
+    @apply py-[18px] px-[50px] h-[66px] rounded-lg flex items-center justify-center text-base uppercase font-secondary font-semibold bg-[#28C278] text-white;
   }
 }
