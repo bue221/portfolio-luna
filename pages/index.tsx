@@ -70,7 +70,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1 }}
                   transition={transitionInitial}
                   src="/img/home/woman.jpeg"
-                  className="max-h-[100vh] w-full lg:w-[50vh] object-cover"
+                  className="max-h-[100vh] w-full lg:w-[50vh] object-cover lg:h-[100vh]"
                   alt=""
                 />
               </motion.div>
