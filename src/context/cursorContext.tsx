@@ -15,9 +15,8 @@ const CursorProvider: React.FC<{
   // cursor bg state
   const [cursorBG, setCursorBG] = useState("default");
 
-  const mobileViewportIsActive = window.innerWidth < 768;
-
   useEffect(() => {
+    const mobileViewportIsActive = window && window.innerWidth < 768;
     if (!mobileViewportIsActive) {
       const move = (e: MouseEvent) => {
         const { clientX, clientY } = e;

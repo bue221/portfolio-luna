@@ -1,43 +1,35 @@
 // import icons
-import {
-  ImFacebook,
-  ImTwitter,
-  ImPinterest,
-  ImInstagram,
-  ImYoutube,
-} from "react-icons/im";
+import { ImLinkedin } from "react-icons/im";
+import { FiFigma } from "react-icons/fi";
+import { useContext } from "react";
+import { CursorContext } from "context/cursorContext";
 
 const Socials = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+
   return (
     <div
-      onMouseEnter={() => {}}
-      onMouseLeave={() => {}}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}
       className="hidden xl:flex ml-24"
     >
       <ul className="flex gap-x-4">
         <li>
-          <a href="http://wwww.facebook.com" target="_blank" rel="noreferrer">
-            <ImFacebook />
+          <a
+            href="https://www.linkedin.com/in/cadelu/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ImLinkedin size={32} />
           </a>
         </li>
         <li>
-          <a href="http://www.twitter.com" target="_blank" rel="noreferrer">
-            <ImTwitter />
-          </a>
-        </li>
-        <li>
-          <a href="http://www.pinterest.com" target="_blank" rel="noreferrer">
-            <ImPinterest />
-          </a>
-        </li>
-        <li>
-          <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
-            <ImInstagram />
-          </a>
-        </li>
-        <li>
-          <a href="http://www.youtube.com" target="_blank" rel="noreferrer">
-            <ImYoutube />
+          <a
+            href="https://www.figma.com/@cadelu"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FiFigma size={32} />
           </a>
         </li>
       </ul>

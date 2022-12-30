@@ -48,6 +48,14 @@ export default function Home() {
               <Link href="/contact" className="btn mb-[30px]">
                 hire me
               </Link>
+              <a
+                href="/resources/Hoja_de_vida.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn mb-[30px]"
+              >
+                See the CV
+              </a>
             </motion.div>
             {/* image */}
             <div className="flex justify-end max-h-96 lg:max-h-max">
@@ -62,11 +70,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1 }}
                   transition={transitionInitial}
                   src="/img/home/woman.jpeg"
-                  style={{
-                    maxHeight: "100vh",
-                    width: "50vw",
-                    objectFit: "cover",
-                  }}
+                  className="max-h-[100vh] w-full lg:w-[50vh] object-cover"
                   alt=""
                 />
               </motion.div>
