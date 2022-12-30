@@ -5,8 +5,13 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 // import transition
 import { transitionInitial } from "../src/components/animations/transitions";
+// Context
+import { useContext } from "react";
+import { CursorContext } from "context/cursorContext";
 
 const AboutPage = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+
   return (
     <>
       <Head>
@@ -23,8 +28,8 @@ const AboutPage = () => {
         className="section"
       >
         <div
-          onMouseEnter={() => {}}
-          onMouseLeave={() => {}}
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
           className="container mx-auto h-full relative"
         >
           <div className="flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left lg:pt-16">

@@ -1,6 +1,10 @@
+// Next
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../../../../public/img/header/logo.svg";
+// Context
+import { useContext } from "react";
+import { CursorContext } from "context/cursorContext";
+// Component's
 import MobileNav from "./mobileNav";
 import Socials from "./Socials";
 
@@ -12,6 +16,7 @@ export const routes = [
 ];
 
 const Header = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <header className=" fixed w-full px-[30px] lg:px-[100px] z-30 h-[100px] lg:h-[140px] flex items-center">
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
@@ -21,6 +26,8 @@ const Header = () => {
         <nav className="hidden xl:flex gap-x-12 font-semibold">
           {routes.map((route) => (
             <Link
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               key={route.path}
               href={route.path}
               className="text-[#696c6d] hover:text-primary transition"

@@ -7,8 +7,11 @@ import WomanImg from "../img/home/woman.png";
 import { motion } from "framer-motion";
 // import transition
 import { transitionInitial } from "../src/components/animations/transitions";
+import { useContext } from "react";
+import { CursorContext } from "context/cursorContext";
 
 export default function Home() {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <>
       <Head>
@@ -31,8 +34,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "-50%" }}
               transition={transitionInitial}
-              onMouseEnter={() => {}}
-              onMouseLeave={() => {}}
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               className="w-full pt-36 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start"
             >
               <h1 className="h1 text-[#28C278]">

@@ -4,8 +4,13 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 // import transition
 import { transitionInitial } from "../src/components/animations/transitions";
+// Context
+import { useContext } from "react";
+import { CursorContext } from "context/cursorContext";
 
 const ContactPage = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+
   return (
     <>
       <Head>
@@ -33,8 +38,8 @@ const ContactPage = () => {
             ></motion.div>
             {/* text & form */}
             <div
-              onMouseEnter={() => {}}
-              onMouseLeave={() => {}}
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
               className="lg:flex-1 lg:pt-32 px-4"
             >
               <h1 className="h1">Contact me</h1>
